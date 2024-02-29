@@ -4,6 +4,8 @@
 , wrapQtAppsHook
 , cmake
 , gitMinimal
+, copyDesktopItems
+, makeDesktopItem
 }:
 
 stdenv.mkDerivation {
@@ -12,14 +14,33 @@ stdenv.mkDerivation {
 
   src = ./.;
 
-  buildInputs = [ qtbase qtwebengine ];
-  nativeBuildInputs = [ wrapQtAppsHook cmake gitMinimal ];
+  buildInputs = [
+    qtbase
+    qtwebengine
+  ];
 
-  installPhase = ''
-    runHook preInstall
-    mkdir -p $out/bin
+  nativeBuildInputs = [
+    wrapQtAppsHook
+    cmake
+    gitMinimal
+    copyDesktopItems
+  ];
 
-    install -m755 "../bin/x86_64/Release/regex101" $out/bin
-    runHook postInstall
+  postInstall = ''
+    # copy icons
+    for res in 16 32 64 128 256 512 1024; do
+      res="${"$"}{res}x${"$"}{res}"
+      install -D ../assets/*.iconset/icon_$res.png $out/share/icons/hicolor/$res/apps/regex101.png
+    done
   '';
+
+  desktopItems = [
+    (makeDesktopItem {
+      name = "regex101.desktop";
+      desktopName = "Regex 101";
+      icon = "regex101";
+      exec = "regex101";
+    })
+  ];
+
 }
