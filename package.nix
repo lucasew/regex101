@@ -10,7 +10,7 @@
 
 stdenv.mkDerivation {
   pname = "regex101";
-  version = "0-unstable-2020-11-24";
+  version = builtins.replaceStrings ["\n"] [""] (builtins.readFile ./VERSION);
 
   src = ./.;
 
