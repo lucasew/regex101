@@ -6623,7 +6623,7 @@
     },
     "./app/js/constants/Languages.js": function(e, t) {
         e.exports = {
-            PORTUGUERSE: {
+            PORTUGUESE: {
                 text: "Português",
                 file: "portuguese.json"
             },
