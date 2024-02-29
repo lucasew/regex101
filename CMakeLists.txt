@@ -67,7 +67,7 @@ cmake_minimum_required(VERSION 3.5)
 set(APPLICATION_SHORT_NAME "regex101")
 set(APPLICATION_LONG_NAME "Regular Expressions 101")
 
-project(${APPLICATION_LONG_NAME} LANGUAGES CXX)
+project(${APPLICATION_SHORT_NAME} LANGUAGES CXX)
 
 if((APPLE) AND (CMAKE_OSX_ARCHITECTURES MATCHES "arm64"))
     set(APPLICATION_PLATFORM_ARCH "arm64")
@@ -215,7 +215,7 @@ add_executable(${APPLICATION_SHORT_NAME} MACOSX_BUNDLE ${APPLICATION_SOURCES})
 
 # Set the target executable name
 
-set_target_properties(${APPLICATION_SHORT_NAME} PROPERTIES OUTPUT_NAME "${APPLICATION_LONG_NAME}")
+set_target_properties(${APPLICATION_SHORT_NAME} PROPERTIES OUTPUT_NAME "${APPLICATION_SHORT_NAME}")
 
 # Set the folder where the binary should be placed
 
