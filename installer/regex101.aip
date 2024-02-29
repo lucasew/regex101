@@ -18,7 +18,7 @@
     <ROW Property="ProductCode" Value="1033:{EDF34EAD-FDB7-4FB4-A194-6568A0CC812B} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Regular Expressions 101"/>
-    <ROW Property="ProductVersion" Value="0.0.0.0" Type="32" TargetFile="RegularExpressions101.exe"/>
+    <ROW Property="ProductVersion" Value="0.0.0.0" Type="32" TargetFile="regex101.exe"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{56D60F3A-8EFD-417B-98EA-32468B0EE616}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="MsiBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -67,7 +67,7 @@
     <ROW Component="Qt5WebEngineWidgets.dll" ComponentId="{C1EE75BE-950E-4BB1-A298-2414A79B7189}" Directory_="Deploy_Dir" Attributes="256" KeyPath="Qt5WebEngineWidgets.dll"/>
     <ROW Component="Qt5Widgets.dll" ComponentId="{00C0EB47-0CD9-4290-BCFF-A6217E468D56}" Directory_="Deploy_Dir" Attributes="256" KeyPath="Qt5Widgets.dll"/>
     <ROW Component="QtWebEngineProcess.exe" ComponentId="{86FD662F-7959-4468-919E-CB3DB0209CB9}" Directory_="Deploy_Dir" Attributes="256" KeyPath="QtWebEngineProcess.exe"/>
-    <ROW Component="RegularExpressions101.exe" ComponentId="{AEE6AB0F-E5DF-4E0B-B5A6-2BCD5BF33E5B}" Directory_="Deploy_Dir" Attributes="256" KeyPath="RegularExpressions101.exe"/>
+    <ROW Component="regex101.exe" ComponentId="{AEE6AB0F-E5DF-4E0B-B5A6-2BCD5BF33E5B}" Directory_="Deploy_Dir" Attributes="256" KeyPath="regex101.exe"/>
     <ROW Component="am.pak" ComponentId="{42ED633A-84CE-41AA-A460-CAA3C7C23CB5}" Directory_="qtwebengine_locales_Dir" Attributes="0" KeyPath="am.pak" Type="0"/>
     <ROW Component="d3dcompiler_47.dll" ComponentId="{A8419548-5916-41E5-83F9-494FA14ED299}" Directory_="Deploy_Dir" Attributes="256" KeyPath="d3dcompiler_47.dll"/>
     <ROW Component="icudtl.dat" ComponentId="{160D8F52-50B9-4BB7-B2B1-502045A86B10}" Directory_="resources_Dir" Attributes="0" KeyPath="icudtl.dat" Type="0"/>
@@ -150,7 +150,7 @@
     <ROW File="Qt5Widgets.dll" Component_="Qt5Widgets.dll" FileName="QT5WID~2.DLL|Qt5Widgets.dll" Attributes="0" SourcePath="..\bin\x86_64\Deploy\Qt5Widgets.dll" SelfReg="false"/>
     <ROW File="qwindowsvistastyle.dll" Component_="qwindowsvistastyle.dll" FileName="QWINDO~2.DLL|qwindowsvistastyle.dll" Attributes="0" SourcePath="..\bin\x86_64\Deploy\styles\qwindowsvistastyle.dll" SelfReg="false"/>
     <ROW File="vc_redist.x64.exe" Component_="vc_redist.x64.exe" FileName="VC_RED~1.EXE|vc_redist.x64.exe" Attributes="0" SourcePath="..\bin\x86_64\Deploy\vc_redist.x64.exe" SelfReg="false"/>
-    <ROW File="RegularExpressions101.exe" Component_="RegularExpressions101.exe" FileName="REGULA~1.EXE|Regular Expressions 101.exe" Attributes="0" SourcePath="..\bin\x86_64\Release\Regular Expressions 101.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="regex101.exe" Component_="regex101.exe" FileName="REGULA~1.EXE|regex101.exe" Attributes="0" SourcePath="..\bin\x86_64\Release\regex101.exe" SelfReg="false" DigSign="true"/>
     <ROW File="qtposition_positionpoll.dll" Component_="qtposition_positionpoll.dll" FileName="QTPOSI~1.DLL|qtposition_positionpoll.dll" Attributes="0" SourcePath="..\bin\x86_64\Deploy\position\qtposition_positionpoll.dll" SelfReg="false"/>
     <ROW File="qtposition_serialnmea.dll" Component_="qtposition_serialnmea.dll" FileName="QTPOSI~2.DLL|qtposition_serialnmea.dll" Attributes="0" SourcePath="..\bin\x86_64\Deploy\position\qtposition_serialnmea.dll" SelfReg="false"/>
     <ROW File="qtposition_winrt.dll" Component_="qtposition_winrt.dll" FileName="QTPOSI~3.DLL|qtposition_winrt.dll" Attributes="0" SourcePath="..\bin\x86_64\Deploy\position\qtposition_winrt.dll" SelfReg="false"/>
@@ -223,7 +223,7 @@
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
-    <ROW BuildKey="MsiBuild" BuildName="MsiBuild" BuildOrder="1" BuildType="1" PackageFolder="..\deployment" PackageFileName="Regular Expressions 101" Languages="en" InstallationType="4" PackageType="1" FilesInsideExe="true" ExeIconPath="..\icon.ico" ExtUI="true" UseLargeSchema="true" ExeName="Regular Expressions 101" MsiPackageType="x64"/>
+    <ROW BuildKey="MsiBuild" BuildName="MsiBuild" BuildOrder="1" BuildType="1" PackageFolder="..\deployment" PackageFileName="regex101" Languages="en" InstallationType="4" PackageType="1" FilesInsideExe="true" ExeIconPath="..\icon.ico" ExtUI="true" UseLargeSchema="true" ExeName="regex101" MsiPackageType="x64"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
     <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
@@ -353,7 +353,7 @@
     <ROW Feature_="MainFeature" Component_="Qt5Widgets.dll"/>
     <ROW Feature_="MainFeature" Component_="qwindowsvistastyle.dll"/>
     <ROW Feature_="MainFeature" Component_="vc_redist.x64.exe"/>
-    <ROW Feature_="MainFeature" Component_="RegularExpressions101.exe"/>
+    <ROW Feature_="MainFeature" Component_="regex101.exe"/>
     <ROW Feature_="MainFeature" Component_="qtposition_positionpoll.dll"/>
     <ROW Feature_="MainFeature" Component_="qtposition_serialnmea.dll"/>
     <ROW Feature_="MainFeature" Component_="qtposition_winrt.dll"/>
