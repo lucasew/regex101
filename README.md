@@ -14,15 +14,8 @@ This is not an official regex101 product, but the author of the site gave his pe
 
 ## Installation
 
-Binary distributions can be found under the assets on the [github releases](https://github.com/fizzyade/regex101/releases) page.
-
-- **Windows**.  The application is supplied as an installer executable, download and run the installer to install the application, this will create a shortcut which can be used to launch the software.
-
-- **macOS**.  The application is supplied as a dmg disk image.  Download and open the disk image and drag the Regular Expressions 101 icon into the Applications folder, the application can then be launched by double clicking on the Regular Expressions 101 icon in Applications.
-
-- **Linux**.  The application is supplied as an AppImage.  Download the application and then from the terminal run the command:
-
-  `chmod +x <downloaded filename>`
+> **TODO**: fix installers and packaging for everyone but Nix
+> **TODO**: make CI stuff to release binaries on each release
 
 ## Requirements (Development)
 
