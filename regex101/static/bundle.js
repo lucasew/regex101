@@ -6631,26 +6631,26 @@
                 text: "English",
                 file: "english.json"
             },
-            DUTCH: {
-                text: "Dutch",
-                file: "dutch.json"
-            },
-            FRENCH: {
-                text: "French",
-                file: "french.json"
-            },
-            GERMAN: {
-                text: "German",
-                file: "german.json"
-            },
-            CHINESE: {
-                text: "Chinese",
-                file: "zh.json"
-            },
-            SWEDISH: {
-                text: "Swedish",
-                file: "sv.json"
-            }
+            // DUTCH: {
+            //     text: "Dutch",
+            //     file: "dutch.json"
+            // },
+            // FRENCH: {
+            //     text: "French",
+            //     file: "french.json"
+            // },
+            // GERMAN: {
+            //     text: "German",
+            //     file: "german.json"
+            // },
+            // CHINESE: {
+            //     text: "Chinese",
+            //     file: "zh.json"
+            // },
+            // SWEDISH: {
+            //     text: "Swedish",
+            //     file: "sv.json"
+            // }
         }
     },
     "./app/js/constants/LibraryOrder.js": function(e, t) {
