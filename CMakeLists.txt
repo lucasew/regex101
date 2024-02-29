@@ -63,45 +63,45 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # The list of source files
 
 set(APPLICATION_SOURCES
-    main.cpp
-    MainWindow.cpp
-    MainWindow.h
-    MainWindow.ui
-    RegExAboutDialog.cpp
-    RegExAboutDialog.h
-    RegExApiEndpoint.cpp
-    RegExApiEndpoint.h
-    RegExNullWebEnginePage.cpp
-    RegExNullWebEnginePage.h
-    RegExSplashScreen.cpp
-    RegExSplashScreen.h
-    RegExUrlRequestInterceptor.cpp
-    RegExUrlRequestInterceptor.h
-    RegExUrlSchemeHandler.cpp
-    RegExUrlSchemeHandler.h
-    RegExWebEnginePage.cpp
-    RegExWebEnginePage.h
-    RegExWebEngineProfile.cpp
-    RegExWebEngineProfile.h
-    regex101.qrc
     assets/regex101.icns
     Info.plist.in
-    opensans.qrc
-    SettingsDialog.cpp
-    SettingsDialog.h
-    TransparentWidget.cpp
-    TransparentWidget.h
-    RegExDatabase.cpp
-    RegExDatabase.h
-    ISettingsPage.h
-    DatabaseSettingsPage.cpp
-    DatabaseSettingsPage.h
-    DatabaseSettingsPage.ui
-    GeneralSettingsPage.cpp
-    GeneralSettingsPage.h
-    GeneralSettingsPage.ui
-    Cloner.cpp
-    Cloner.h
+    src/main.cpp
+    src/MainWindow.cpp
+    src/MainWindow.h
+    src/MainWindow.ui
+    src/RegExAboutDialog.cpp
+    src/RegExAboutDialog.h
+    src/RegExApiEndpoint.cpp
+    src/RegExApiEndpoint.h
+    src/RegExNullWebEnginePage.cpp
+    src/RegExNullWebEnginePage.h
+    src/RegExSplashScreen.cpp
+    src/RegExSplashScreen.h
+    src/RegExUrlRequestInterceptor.cpp
+    src/RegExUrlRequestInterceptor.h
+    src/RegExUrlSchemeHandler.cpp
+    src/RegExUrlSchemeHandler.h
+    src/RegExWebEnginePage.cpp
+    src/RegExWebEnginePage.h
+    src/RegExWebEngineProfile.cpp
+    src/RegExWebEngineProfile.h
+    src/regex101.qrc
+    src/opensans.qrc
+    src/SettingsDialog.cpp
+    src/SettingsDialog.h
+    src/TransparentWidget.cpp
+    src/TransparentWidget.h
+    src/RegExDatabase.cpp
+    src/RegExDatabase.h
+    src/ISettingsPage.h
+    src/DatabaseSettingsPage.cpp
+    src/DatabaseSettingsPage.h
+    src/DatabaseSettingsPage.ui
+    src/GeneralSettingsPage.cpp
+    src/GeneralSettingsPage.h
+    src/GeneralSettingsPage.ui
+    src/Cloner.cpp
+    src/Cloner.h
 )
 
 # List of Qt libraries used by the application
@@ -117,8 +117,8 @@ set(APPLICATION_QT_LIBRARIES
 
 if(APPLE)
     list(APPEND APPLICATION_SOURCES
-        MacHelper.mm
-        MacHelper.h
+        src/MacHelper.mm
+        src/MacHelper.h
     )
 
     list(APPEND APPLICATION_QT_LIBRARIES MacExtras)
