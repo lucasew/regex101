@@ -71,6 +71,7 @@ Nedrysoft::MainWindow::MainWindow(Nedrysoft::RegExSplashScreen *splashScreen)
 
 Nedrysoft::MainWindow::~MainWindow()
 {
+    QDesktopServices::unsetUrlHandler(RegExUrlSchemeHandler::name());
     delete m_page;
     delete ui;
 }
