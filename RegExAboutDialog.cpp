@@ -87,7 +87,7 @@ void Nedrysoft::RegExAboutDialog::paintEvent(QPaintEvent *paintEvent)
     QDialog::paintEvent(paintEvent);
 
     auto font = QFont(fontFamily, fontSize, QFont::Weight::Normal);
-    auto versionText = QString("%1.%2.%3 (%4 %5)").arg(APPLICATION_GIT_YEAR).arg(APPLICATION_GIT_MONTH).arg(APPLICATION_GIT_DAY).arg(APPLICATION_GIT_BRANCH).arg(APPLICATION_GIT_HASH);
+    auto versionText = QString("%1").arg(APPLICATION_VERSION);
 
     QPainter painter(this);
 

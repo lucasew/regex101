@@ -24,43 +24,11 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-# macOS deployment
-# ----------------
-#
-# ./deploy.py --appleid="adrian.carpenter@me.com" \
-#             --password="@keychain:signingpassword" -\
-#             --cert="Developer ID Application: Adrian Carpenter (5JN9ZQ38G6)" \
-#             --arch=x86_64 \
-#             --type=release \
-#             --qtdir="/Users/adriancarpenter/Qt/5.15.0/clang_64"
-#
-# Windows deployment
-# ------------------
-#
-# python deploy.py --curlbin="C:\Tools\curl\bin\curl.exe" ^
-#                  --qtdir="C:\Qt\5.14.2\msvc2017_64" ^
-#                  --type=release ^
-#                  --cert="Open Source Developer, Adrian Carpenter"
-#
-# Linux deployment
-# ----------------
-#
-# ./deploy.py --qtdir="/home/adrian/Qt/5.14.2/gcc_64" \
-#             --curlbin="/usr/bin/curl” \
-#             -—cert=05DDE1C3F3B50B53112A13C231A0DBA53EEA9FE6
-#
-# ------------
-#
 # The follow definitions are available to the compiler preprocessor:
 #
 # APPLICATION_LONG_NAME             The full application name.
 # APPLICATION_SHORT_NAME            The abbreviated application name.
-#
-# APPLICATION_GIT_YEAR              The year of the current git commit.
-# APPLICATION_GIT_MONTH             The month of the current git commit.
-# APPLICATION_GIT_DAY               The day of the current git commit.
-# APPLICATION_GIT_BRANCH            The branch of the current git commit.
-# APPLICATION_GIT_HASH              The hash of the current git commit.
+# APPLICATION_VERSION               Version of the application
 
 cmake_minimum_required(VERSION 3.5)
 
@@ -160,46 +128,14 @@ endif()
 
 find_package(Qt5 COMPONENTS ${APPLICATION_QT_LIBRARIES} REQUIRED)
 
-# use Git to produce version information and pass into compiler
+file(READ VERSION APPLICATION_VERSION)
 
-find_package(Git REQUIRED)
+string(STRIP "${APPLICATION_VERSION}" APPLICATION_VERSION)
+message("Project version: ${APPLICATION_VERSION}")
 
-execute_process(COMMAND git --git-dir=${APPLICATON_SOURCE_ROOT}/.git log -1 --format=%cd --date=format:%Y OUTPUT_VARIABLE APPLICATION_GIT_YEAR)
-execute_process(COMMAND git --git-dir=${APPLICATON_SOURCE_ROOT}/.git log -1 --format=%cd --date=format:%m OUTPUT_VARIABLE APPLICATION_GIT_MONTH)
-execute_process(COMMAND git --git-dir=${APPLICATON_SOURCE_ROOT}/.git log -1 --format=%cd --date=format:%d OUTPUT_VARIABLE APPLICATION_GIT_DAY)
-execute_process(COMMAND git --git-dir=${APPLICATON_SOURCE_ROOT}/.git log -1 --format=%h OUTPUT_VARIABLE APPLICATION_GIT_HASH)
-execute_process(COMMAND git --git-dir=${APPLICATON_SOURCE_ROOT}/.git branch --show-current OUTPUT_VARIABLE APPLICATION_GIT_BRANCH)
-execute_process(COMMAND git --git-dir=${APPLICATON_SOURCE_ROOT}/.git diff --quiet HEAD RESULT_VARIABLE APPLICATION_GIT_UNCOMMITED)
-
-if (APPLICATION_GIT_UNCOMMITED EQUAL 1)
-    set(APPLICATION_GIT_UNCOMMITED "+")
-else()
-    set(APPLICATION_GIT_UNCOMMITED "")
-endif()
-
-if ("${APPLICATION_GIT_YEAR}" STREQUAL "")
-    set(APPLICATION_GIT_YEAR 0)
-    set(APPLICATION_GIT_MONTH 0)
-    set(APPLICATION_GIT_DAY 0)
-    set(APPLICATION_GIT_BRANCH none)
-    set(APPLICATION_GIT_HASH 0)
-else()
-    string(STRIP "${APPLICATION_GIT_YEAR}" APPLICATION_GIT_YEAR)
-    string(STRIP "${APPLICATION_GIT_MONTH}" APPLICATION_GIT_MONTH)
-    string(STRIP "${APPLICATION_GIT_DAY}" APPLICATION_GIT_DAY)
-    string(STRIP "${APPLICATION_GIT_BRANCH}" APPLICATION_GIT_BRANCH)
-    string(STRIP "${APPLICATION_GIT_HASH}" APPLICATION_GIT_HASH)
-endif()
-
-# Add prepressor definitions
-
-add_definitions("-DAPPLICATION_GIT_YEAR=\"${APPLICATION_GIT_YEAR}\"")
-add_definitions("-DAPPLICATION_GIT_MONTH=\"${APPLICATION_GIT_MONTH}\"")
-add_definitions("-DAPPLICATION_GIT_DAY=\"${APPLICATION_GIT_DAY}\"")
-add_definitions("-DAPPLICATION_GIT_BRANCH=\"${APPLICATION_GIT_BRANCH}\"")
-add_definitions("-DAPPLICATION_GIT_HASH=\"${APPLICATION_GIT_HASH}\"")
 add_definitions("-DAPPLICATION_LONG_NAME=\"${APPLICATION_LONG_NAME}\"")
 add_definitions("-DAPPLICATION_SHORT_NAME=\"${APPLICATION_SHORT_NAME}\"")
+add_definitions("-DAPPLICATION_VERSION=\"${APPLICATION_VERSION}\"")
 
 # Generate the list of Qt libraries to link into the application
 
