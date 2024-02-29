@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [ $# == 1 ]; then
+  echo $1 > VERSION
+  git add VERSION
+  git commit -m "bump to $1"
+  git tag $1
+else
+  echo "release [version]"
+fi
