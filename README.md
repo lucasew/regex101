@@ -14,8 +14,22 @@ This is not an official regex101 product, but the author of the site gave his pe
 
 ## Installation
 
+This repo is packaged as a Nix flake. You can run it with the following command:
+
+```bash
+nix run github:lucasew/regex101 --no-write-lock-file
+```
+
+If you for some reason need to pass some kind of flag to the program itself you will need to add a `--` to separate Nix arguments and the program arguments.
+
 > **TODO**: fix installers and packaging for everyone but Nix
 > **TODO**: make CI stuff to release binaries on each release
+
+## Information
+From below this part is stuff from upstream. Things may have changed for other
+systems, and honestly, right now, I don't care for anything other than Nix and
+NixOS so you are on your own. It may work flawlessly or may not work at all. I
+didn't test. PRs welcome BTW.
 
 ## Requirements (Development)
 
