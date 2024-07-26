@@ -32,7 +32,7 @@
 
 cmake_minimum_required(VERSION 3.5)
 
-set(APPLICATION_SHORT_NAME "regex101")
+set(APPLICATION_SHORT_NAME "io.github.lucasew.regex101")
 set(APPLICATION_LONG_NAME "Regular Expressions 101")
 
 project(${APPLICATION_SHORT_NAME} LANGUAGES CXX)

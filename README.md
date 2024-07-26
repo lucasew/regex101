@@ -23,6 +23,7 @@ nix run github:lucasew/regex101 --no-write-lock-file
 If you for some reason need to pass some kind of flag to the program itself you will need to add a `--` to separate Nix arguments and the program arguments.
 
 > **TODO**: fix installers and packaging for everyone but Nix
+
 > **TODO**: make CI stuff to release binaries on each release
 
 ## Information
