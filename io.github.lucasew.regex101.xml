@@ -1,35 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright [year] [name] -->
 <component type="desktop-application">
-<id>io.github.lucasew.regex101</id>
-<metadata_license>CC0-1.0</metadata_license>
-<project_license>GPL-3.0-only</project_license>
-<name>Regex 101</name>
-<summary>A tool for developing, testing and learning regular expressions.</summary>
-<developer id="io.github.lucasew">
-  <name>Lucas Eduardo</name>
-</developer>
+  <id>io.github.lucasew.regex101</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <name>Regex 101</name>
+  <summary>A tool for developing, testing and learning regular expressions</summary>
+  <developer id="io.github.lucasew">
+    <name>Lucas Eduardo</name>
+  </developer>
 
-<description>
-  <p>This project is a desktop version of the <a href="https://regex101.com">regex101 site</a>. It embeds a copy of the site inside  the application so that no internet connection is required to work on regular expressions.  The motivation behind this was that when developing regular expressions for use in products, I often find myself opening the website again and again, resulting in many tabs in various states swamped in the sea of web pages.
+  <description>
+    <p>This project is a desktop version of the regex101 site. It embeds a copy of the site inside  the application so that no internet connection is required to work on regular expressions.  The motivation behind this was that when developing regular expressions for use in products, I often find myself opening the website again and again, resulting in many tabs in various states swamped in the sea of web pages.</p>
 
-  <p>By embedding the website in an application, regex101 can be accessed immediately from your task bar, no more searching through tabs to find the right one!</p>
+    <p>By embedding the website in an application, regex101 can be accessed immediately from your task bar, no more searching through tabs to find the right one!</p>
 
-  <p>In addition, the software redirects the regex101.com online database to a local SQLite database, so you can store your own personal library of regular expressions inside the application.</p>
+    <p>In addition, the software redirects the regex101.com online database to a local SQLite database, so you can store your own personal library of regular expressions inside the application.</p>
 
-  <p>This is not an official regex101 product, but the author of the site gave his permission for me to release this application, so please support his hard work by making a donation if you find this application useful.</p>
-</description>
+    <p>This is not an official regex101 product, but the author of the site gave his permission for me to release this application, so please support his hard work by making a donation if you find this application useful.</p>
+  </description>
 
-<launchable type="desktop-id">io.github.lucasew.regex101.desktop</launchable>
-<icon type="remote">https://raw.githubusercontent.com/lucasew/regex101/master/assets/regex101.iconset/icon_1024x1024.png</icon>
-<screenshots>
-</screenshots>
-<keywords>
-  <keyword translate="no">Regex</keyword>
-  <keyword xml:lang="pt">Expressão regular</keyword>
-</keywords>
-<content_rating type="oars-1.0" />
-<url type="homepage">https://github.com/lucasew/regex101/</url>
-<url type="bugtracker">https://github.com/lucasew/regex101/issues</url>
-<url type="vcs-browser">https://github.com/lucasew/regex101/</url>
+  <launchable type="desktop-id">io.github.lucasew.regex101.desktop</launchable>
+  <icon type="remote">https://raw.githubusercontent.com/lucasew/regex101/master/assets/regex101.iconset/icon_1024x1024.png</icon>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/lucasew/regex101/master/assets/screenshot1.png</image>
+      <caption>Main page</caption>
+    </screenshot>
+  </screenshots>
+  <releases>
+  </releases>
+  <keywords>
+    <keyword translate="no">Regex</keyword>
+    <keyword xml:lang="pt">Expressão regular</keyword>
+  </keywords>
+  <content_rating type="oars-1.0" />
+  <url type="homepage">https://github.com/lucasew/regex101/</url>
+  <url type="bugtracker">https://github.com/lucasew/regex101/issues</url>
+  <url type="vcs-browser">https://github.com/lucasew/regex101/</url>
 
+</component>
