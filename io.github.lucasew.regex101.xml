@@ -29,6 +29,48 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="0.3.0" date="2024-07-26">
+      <description>
+        <p>This release brings:</p>
+        <ul>
+          <li>Flatpak support</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.2.2" date="2024-02-29">
+      <description>
+        <p>This release brings:</p>
+        <ul>
+          <li>Minor under the hood tweaks</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.2.1" date="2024-02-29">
+      <description>
+        <p>This release brings:</p>
+        <ul>
+          <li>Minor under the hood tweaks</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.2.0" date="2024-02-29">
+      <description>
+        <p>This release brings:</p>
+        <ul>
+          <li>Nix stuff (packaging)</li>
+          <li>Build system simplification</li>
+          <li>Loading version from a text file instead of using Git</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.1.0" date="2024-02-29">
+      <description>
+        <p>This release brings:</p>
+        <ul>
+          <li>Introduction of the fork from nedrysoft</li>
+        </ul>
+      </description>
+    </release>
   </releases>
   <keywords>
     <keyword translate="no">Regex</keyword>
