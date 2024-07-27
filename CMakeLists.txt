@@ -204,7 +204,7 @@ if (UNIX AND NOT APPLE)
         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications
     )
     install(
-        FILES ${APPLICATION_ID}.xml
+        FILES ${APPLICATION_ID}.metainfo.xml
         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/metainfo
     )
 endif()
