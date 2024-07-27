@@ -192,7 +192,7 @@ target_link_libraries(${APPLICATION_ID} PRIVATE ${APPLICATION_QT_LINK_LIBRARIES}
 install(TARGETS ${APPLICATION_ID})
 
 if (UNIX AND NOT APPLE)
-    foreach(resolution IN ITEMS 16 32 64 128 256 512 1024)
+    foreach(resolution IN ITEMS 16 32 64 128 256 512)
         install(
             FILES assets/regex101.iconset/icon_${resolution}x${resolution}.png
             DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/${resolution}x${resolution}/apps
