@@ -200,6 +200,10 @@ if (UNIX AND NOT APPLE)
         )
     endforeach()
     install(
+        FILES ${APPLICATION_ID}.desktop
+        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications
+    )
+    install(
         FILES ${APPLICATION_ID}.xml
         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/metainfo
     )
