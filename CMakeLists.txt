@@ -32,8 +32,9 @@
 
 cmake_minimum_required(VERSION 3.5)
 
-set(APPLICATION_SHORT_NAME "io.github.lucasew.regex101")
+set(APPLICATION_SHORT_NAME "regex101")
 set(APPLICATION_LONG_NAME "Regular Expressions 101")
+set(APPLICATION_ID "io.github.lucasew.regex101")
 
 project(${APPLICATION_SHORT_NAME} LANGUAGES CXX)
 
@@ -136,6 +137,7 @@ message("Project version: ${APPLICATION_VERSION}")
 add_definitions("-DAPPLICATION_LONG_NAME=\"${APPLICATION_LONG_NAME}\"")
 add_definitions("-DAPPLICATION_SHORT_NAME=\"${APPLICATION_SHORT_NAME}\"")
 add_definitions("-DAPPLICATION_VERSION=\"${APPLICATION_VERSION}\"")
+add_definitions("-DAPPLICATION_ID=\"${APPLICATION_ID}\"")
 
 # Generate the list of Qt libraries to link into the application
 
@@ -147,15 +149,15 @@ endforeach()
 
 # Create an application executable (and ensure it's an application bundle under macOS)
 
-add_executable(${APPLICATION_SHORT_NAME} MACOSX_BUNDLE ${APPLICATION_SOURCES})
+add_executable(${APPLICATION_ID} MACOSX_BUNDLE ${APPLICATION_SOURCES})
 
 # Set the target executable name
 
-set_target_properties(${APPLICATION_SHORT_NAME} PROPERTIES OUTPUT_NAME "${APPLICATION_SHORT_NAME}")
+set_target_properties(${APPLICATION_ID} PROPERTIES OUTPUT_NAME "${APPLICATION_ID}")
 
 # Set the folder where the binary should be placed
 
-set_target_properties(${APPLICATION_SHORT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${APPLICATION_BIN_OUTPUT})
+set_target_properties(${APPLICATION_ID} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${APPLICATION_BIN_OUTPUT})
 
 # If macOS build, then ensure the icon is copied to the bundle and set up the Info.plist file
 
@@ -165,7 +167,7 @@ if(APPLE)
 
     set(APPLICATION_BUNDLE_NAME "${CMAKE_PROJECT_NAME}")
     set(APPLICATION_BUNDLE_ICONS "${APPLICATION_SHORT_NAME}.icns")
-    set(APPLICATION_BUNDLE_IDENTIFIER "com.nedrysoft.${APPLICATION_SHORT_NAME}")
+    set(APPLICATION_BUNDLE_IDENTIFIER "${APPLICATION_ID}")
     set(APPLICATION_BUNDLE_SCHEME "${APPLICATION_SHORT_NAME}")
 endif()
 
@@ -185,6 +187,20 @@ endif()
 
 # Set the libraries be linked in
 
-target_link_libraries(${APPLICATION_SHORT_NAME} PRIVATE ${APPLICATION_QT_LINK_LIBRARIES})
+target_link_libraries(${APPLICATION_ID} PRIVATE ${APPLICATION_QT_LINK_LIBRARIES})
 
-install(TARGETS ${APPLICATION_SHORT_NAME})
+install(TARGETS ${APPLICATION_ID})
+
+if (UNIX AND NOT APPLE)
+    foreach(resolution IN ITEMS 16 32 64 128 256 512 1024)
+        install(
+            FILES assets/regex101.iconset/icon_${resolution}x${resolution}.png
+            DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/${resolution}x${resolution}/apps
+            RENAME ${APPLICATION_ID}.png
+        )
+    endforeach()
+    install(
+        FILES ${APPLICATION_ID}.xml
+        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/metainfo
+    )
+endif()
