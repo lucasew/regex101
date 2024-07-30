@@ -1,9 +1,8 @@
 [Desktop Entry]
 Type=Application
-Name=Regular Expressions 101
+Name=lucasew's Regular Expressions 101 Desktop
 Exec=io.github.lucasew.regex101
 Icon=io.github.lucasew.regex101
 Comment=Regular Expressions 101, a tool for developing, testing and learning regular expressions.
 Terminal=false
 Categories=Development;
-Name[en_GB]=Regular\sExpressions\s101.desktop

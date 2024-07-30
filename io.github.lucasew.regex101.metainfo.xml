@@ -4,8 +4,8 @@
   <id>io.github.lucasew.regex101</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-only</project_license>
-  <name>Regex 101</name>
-  <summary>A tool for developing, testing and learning regular expressions</summary>
+  <name>lucasew's Regex 101 Desktop</name>
+  <summary>A tool for developing, testing and learning regular expressions, without needing a Internet connection</summary>
   <developer id="io.github.lucasew">
     <name>Lucas Eduardo</name>
   </developer>
