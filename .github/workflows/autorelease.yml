@@ -15,6 +15,28 @@ on:
   schedule:
     - cron: '0 2 * * 6' # saturday 2am
 jobs:
+  build-flatpak:
+    name: "Flatpak"
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/flathub-infra/flatpak-github-actions:gnome-48
+      options: --privileged
+    steps:
+    - uses: actions/checkout@v4
+    - uses: flatpak/flatpak-github-actions/flatpak-builder@v6
+      name: "Build"
+      with:
+        bundle: app.flatpak
+        manifest-path: io.github.lucasew.regex101.yaml
+        cache-key: flatpak-builder-${{ github.sha }}
+    - uses: svenstaro/upload-release-action@v2
+      if: env.RELEASE_VERSION != ''
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: '*.flatpak'
+        tag: ${{ env.RELEASE_VERSION }}
+        file_glob: true
+
   autorelease:
     runs-on: ubuntu-latest
     permissions:
@@ -59,12 +81,6 @@ jobs:
     - name: Try to build it
       run: 'nix build .#'
 
-    - uses: flatpak/flatpak-github-actions/flatpak-builder@v6
-      with:
-        bundle: app.flatpak
-        manifest-path: io.github.lucasew.regex101.yaml
-        verbose: true
-
     - name: Make release if everything looks right
       env:
         NEW_VERSION: ${{ github.event.inputs.new_version }}
@@ -84,13 +100,3 @@ jobs:
       with:
           tag: ${{ env.RELEASE_VERSION }}
           title: Release ${{ env.RELEASE_VERSION }}
-
-    - uses: svenstaro/upload-release-action@v2
-      if: env.RELEASE_VERSION != ''
-      with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: '*.flatpak'
-        tag: ${{ env.RELEASE_VERSION }}
-        overwrite: true
-        file_glob: true
-
