@@ -21,7 +21,7 @@
   </description>
 
   <launchable type="desktop-id">io.github.lucasew.regex101.desktop</launchable>
-  <icon type="remote">https://raw.githubusercontent.com/lucasew/regex101/master/assets/regex101.iconset/icon_1024x1024.png</icon>
+  <icon type="remote">https://raw.githubusercontent.com/lucasew/regex101/master/assets/regex101.iconset/icon_512x512.png</icon>
   <screenshots>
     <screenshot type="default">
       <image>https://raw.githubusercontent.com/lucasew/regex101/master/assets/screenshot1.png</image>

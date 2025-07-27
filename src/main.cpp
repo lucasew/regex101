@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
     QApplication application(argc, argv);
 
 #if defined(Q_OS_WINDOWS)
-    QGuiApplication::setWindowIcon(QIcon(":/assets/regex101.iconset/icon_1024x1024@2x.png"));
+    QGuiApplication::setWindowIcon(QIcon(":/assets/regex101.iconset/icon_512x512@2x.png"));
 #endif
     // search the /fonts folder in the resources and attempt to load any found fonts
 

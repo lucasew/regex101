@@ -68,8 +68,6 @@
         <file>../assets/regex101.iconset/icon_256x256.png</file>
         <file>../assets/regex101.iconset/icon_512x512@2x.png</file>
         <file>../assets/regex101.iconset/icon_512x512.png</file>
-        <file>../assets/regex101.iconset/icon_1024x1024@2x.png</file>
-        <file>../assets/regex101.iconset/icon_1024x1024.png</file>
         <file>../assets/icon.ico</file>
         <file>../regex101/regexbridge.js</file>
         <file>../regex101/qwebchannel.js</file>
