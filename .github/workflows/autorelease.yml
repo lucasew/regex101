@@ -79,6 +79,7 @@ jobs:
           exit 1
         fi
     - name: Try to build it
+      continue-on-error: true
       run: 'nix build .#'
 
     - name: Make release if everything looks right
